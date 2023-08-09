@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bulk Inward-Outward</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <form>
+    <h3>Inward</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th>Sl.No.</th>
+        <th>Packet No.</th>
+        <th>No.Of Items</th>
+        </tr>
+      </thead>
+      <tbody>
+                
+        <tr>
+          <td>1</td>
+          <td>
+            <input type="text" name="packetno[]" id="packetno1" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="no_items[]" id="no_items1" class="form-control inw_pkt" onblur="jFmts('IW', 1)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>2</td>
+          <td>
+            <input type="text" name="packetno[]" id="packetno2" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="no_items[]" id="no_items2" class="form-control inw_pkt" onblur="jFmts('IW', 2)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>3</td>
+          <td>
+            <input type="text" name="packetno[]" id="packetno3" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="no_items[]" id="no_items3" class="form-control inw_pkt" onblur="jFmts('IW', 3)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>4</td>
+          <td>
+            <input type="text" name="packetno[]" id="packetno4" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="no_items[]" id="no_items4" class="form-control inw_pkt" onblur="jFmts('IW', 4)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>5</td>
+          <td>
+            <input type="text" name="packetno[]" id="packetno5" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="no_items[]" id="no_items5" class="form-control inw_pkt" onblur="jFmts('IW', 5)">
+          </td>          
+        </tr>
+      
+      </tbody>
+
+    </table>  
+    <div class="row">
+    <div class="col-md-6 float-right" >
+        <label>Inward Total Packets</label>
+       <input type="number" name="IN_total" id="IN_total" class="form-control">
+       </div>
+       </div>
+     <h3>Inward Return</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th>Sl.No.</th>
+        <th>Packet No.</th>
+        <th>No.Of Items</th>       
+        </tr>
+      </thead>
+      <tbody>
+                
+        <tr>
+          <td>1</td>
+          <td>
+            <input type="text" name="INR_packetno[]" id="INR_packetno1" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="INR_no_items[]" id="INR_no_items1" class="form-control inwr_pkt" onblur="jFmts('IWR', 1)">
+          </td>        
+        </tr>
+              
+        <tr>
+          <td>2</td>
+          <td>
+            <input type="text" name="INR_packetno[]" id="INR_packetno2" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="INR_no_items[]" id="INR_no_items2" class="form-control inwr_pkt" onblur="jFmts('IWR', 2)">
+          </td>        
+        </tr>
+              
+        <tr>
+          <td>3</td>
+          <td>
+            <input type="text" name="INR_packetno[]" id="INR_packetno3" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="INR_no_items[]" id="INR_no_items3" class="form-control inwr_pkt" onblur="jFmts('IWR', 3)">
+          </td>        
+        </tr>
+              
+        <tr>
+          <td>4</td>
+          <td>
+            <input type="text" name="INR_packetno[]" id="INR_packetno4" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="INR_no_items[]" id="INR_no_items4" class="form-control inwr_pkt" onblur="jFmts('IWR', 4)">
+          </td>        
+        </tr>
+              
+        <tr>
+          <td>5</td>
+          <td>
+            <input type="text" name="INR_packetno[]" id="INR_packetno5" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="INR_no_items[]" id="INR_no_items5" class="form-control inwr_pkt" onblur="jFmts('IWR', 5)">
+          </td>        
+        </tr>
+            </tbody>
+    </table>
+      <div class="row">
+    <div class="col-md-6" >
+        <label>InwardReturn Total Packets</label>
+       <input type="number" name="INR_total" id="INR_total" class="form-control" >
+       </div>
+       <div class="col-md-6" >
+        <label>Total Inward</label>
+       <input type="number" name="total_mts" id="total_mts" class="form-control">
+       </div>
+       </div>
+     <h3>Outward</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th>Sl.No.</th>
+        <th>Packet No.</th>
+        <th>No.Of Items</th>
+        </tr>
+      </thead>
+      <tbody>
+                
+        <tr>
+          <td>1</td>
+          <td>
+            <input type="text" name="OW_packetno[]" id="OW_packetno1" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OW_no_items[]" id="OW_no_items1" class="form-control ow_pkt" onblur="jFmts('OW', 1)">
+          </td>         
+        </tr>
+              
+        <tr>
+          <td>2</td>
+          <td>
+            <input type="text" name="OW_packetno[]" id="OW_packetno2" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OW_no_items[]" id="OW_no_items2" class="form-control ow_pkt" onblur="jFmts('OW', 2)">
+          </td>         
+        </tr>
+              
+        <tr>
+          <td>3</td>
+          <td>
+            <input type="text" name="OW_packetno[]" id="OW_packetno3" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OW_no_items[]" id="OW_no_items3" class="form-control ow_pkt" onblur="jFmts('OW', 3)">
+          </td>         
+        </tr>
+              
+        <tr>
+          <td>4</td>
+          <td>
+            <input type="text" name="OW_packetno[]" id="OW_packetno4" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OW_no_items[]" id="OW_no_items4" class="form-control ow_pkt" onblur="jFmts('OW', 4)">
+          </td>         
+        </tr>
+              
+        <tr>
+          <td>5</td>
+          <td>
+            <input type="text" name="OW_packetno[]" id="OW_packetno5" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OW_no_items[]" id="OW_no_items5" class="form-control ow_pkt" onblur="jFmts('OW', 5)">
+          </td>         
+        </tr>
+            </tbody>
+    </table>
+      <div class="row">
+    <div class="col-md-6" >
+        <label>Outward Total Packets</label>
+       <input type="number" name="OW_total" id="OW_total" class="form-control">
+       </div>
+       <div class="col-md-6" >
+        <label>Total Inward</label>
+       <input type="number" name="OW_total_mts" id="OW_total_mts" class="form-control">
+       </div>
+       </div>
+     <h3>Outward Return</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th>Sl.No.</th>
+        <th>Packet No.</th>
+        <th>No.Of Items</th>
+        </tr>
+      </thead>
+      <tbody>
+                
+        <tr>
+          <td>1</td>
+          <td>
+            <input type="text" name="OWR_packetno[]" id="OWR_packetno1" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OWR_no_items[]" id="OWR_no_items1" class="form-control owr_pkt" onblur="jFmts('OWR', 1)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>2</td>
+          <td>
+            <input type="text" name="OWR_packetno[]" id="OWR_packetno2" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OWR_no_items[]" id="OWR_no_items2" class="form-control owr_pkt" onblur="jFmts('OWR', 2)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>3</td>
+          <td>
+            <input type="text" name="OWR_packetno[]" id="OWR_packetno3" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OWR_no_items[]" id="OWR_no_items3" class="form-control owr_pkt" onblur="jFmts('OWR', 3)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>4</td>
+          <td>
+            <input type="text" name="OWR_packetno[]" id="OWR_packetno4" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OWR_no_items[]" id="OWR_no_items4" class="form-control owr_pkt" onblur="jFmts('OWR', 4)">
+          </td>          
+        </tr>
+              
+        <tr>
+          <td>5</td>
+          <td>
+            <input type="text" name="OWR_packetno[]" id="OWR_packetno5" class="form-control">
+          </td>
+          <td>
+            <input type="number" name="OWR_no_items[]" id="OWR_no_items5" class="form-control owr_pkt" onblur="jFmts('OWR', 5)">
+          </td>          
+        </tr>
+            </tbody>
+    </table>
+     <div class="row">
+    <div class="col-md-6" >
+        <label>Outward Return Total Packets</label>
+       <input type="number" name="OWR_total" id="OWR_total" class="form-control">
+       </div>
+       <div class="col-md-6" >
+        <label>Total Inward</label>
+       <input type="number" name="OWR_total_mts" id="OWR_total_mts" class="form-control">
+       </div>
+       </div>
+  </form>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+function jFmts(v, j) {
+    var n=0;    
+   //TOTAL INWARD 
+   if(v=='IW'){
+    $('.inw_pkt').each(function(i, element) {        
+        var b = Number($(this).val()); 
+        n += b;
+         $('#IN_total').val(Math.abs(n));
+         $('#total_mts').val(Math.abs(n));
+         $('#OW_total_mts').val(Math.abs(n));
+         $('#OWR_total_mts').val(Math.abs(n));         
+    });
+  }
+  //TOTAL INWARD RETURN + TOTAL INWARD
+  if(v=='IWR'){
+    $('.inwr_pkt').each(function(i, element) {        
+        var b = Number($(this).val()); 
+        n += b;
+         $('#INR_total').val(Math.abs(n));        
+    });
+     var tmts = $('#IN_total').val();        
+     var cal_tmts = tmts - n;
+    $('#total_mts').val(Math.abs(cal_tmts));
+    $('#OW_total_mts').val(Math.abs(cal_tmts));
+    $('#OWR_total_mts').val(Math.abs(cal_tmts));
+    }
+   
+
+    //TOTAL OUTWARD
+  if(v=='OW'){
+    $('.ow_pkt').each(function(i, element) {        
+        var b = Number($(this).val()); 
+        n += b;
+        $('#OW_total').val(Math.abs(n));        
+    });
+    var tmts = $('#total_mts').val();   
+        var cal_tmts = tmts - n;
+         $('#OW_total_mts').val(Math.abs(cal_tmts));
+         $('#OWR_total_mts').val(Math.abs(cal_tmts));
+
+    }
+
+     //TOTAL OUTWARD RETURN
+  if(v=='OWR'){
+    $('.owr_pkt').each(function(i, element) {        
+        var b = Number($(this).val()); 
+        n += b;
+        $('#OWR_total').val(Math.abs(n));        
+    });
+    var tmts = $('#OW_total_mts').val();
+        var cal_tmts = parseFloat(tmts) + parseFloat(n);
+         $('#OWR_total_mts').val(Math.abs(cal_tmts));
+    }
+}
+
+</script>
